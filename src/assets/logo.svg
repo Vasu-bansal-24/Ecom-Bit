@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- White circular bubble with squared bottom right -->
+  <path d="M 50 10 A 40 40 0 0 1 90 50 V 90 H 50 A 40 40 0 0 1 10 50 A 40 40 0 0 1 50 10 Z" fill="#ffffff"/>
+  
+  <!-- Star cutout inside (colored with the dark green background color to simulate cutout) -->
+  <g transform="translate(50, 48)">
+    <path d="M 0 0 Q 15 -5 10 -22" stroke="#0B4226" stroke-width="6" stroke-linecap="round" fill="none" />
+    <path d="M 0 0 Q 15 -5 10 -22" stroke="#0B4226" stroke-width="6" stroke-linecap="round" fill="none" transform="rotate(60)" />
+    <path d="M 0 0 Q 15 -5 10 -22" stroke="#0B4226" stroke-width="6" stroke-linecap="round" fill="none" transform="rotate(120)" />
+    <path d="M 0 0 Q 15 -5 10 -22" stroke="#0B4226" stroke-width="6" stroke-linecap="round" fill="none" transform="rotate(180)" />
+    <path d="M 0 0 Q 15 -5 10 -22" stroke="#0B4226" stroke-width="6" stroke-linecap="round" fill="none" transform="rotate(240)" />
+    <path d="M 0 0 Q 15 -5 10 -22" stroke="#0B4226" stroke-width="6" stroke-linecap="round" fill="none" transform="rotate(300)" />
+  </g>
+</svg>

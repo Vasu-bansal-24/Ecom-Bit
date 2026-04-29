@@ -1,0 +1,46 @@
+/* ========================================
+   SCHEDULE A MEET
+   ======================================== */
+.schedule {
+  padding: 60px 24px 80px;
+  text-align: center;
+}
+
+.schedule__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 40px;
+  background: linear-gradient(135deg, var(--color-green-600), var(--color-green-500));
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 100px;
+  position: relative;
+  transition: transform var(--transition-fast), box-shadow var(--transition-base);
+  animation: pulseGlow 3s ease infinite;
+}
+
+.schedule__btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 0 50px rgba(16, 185, 129, 0.4);
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.35); }
+}
+
+.schedule__subtext {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.schedule__subtext span {
+  color: var(--color-green-400);
+  font-weight: 600;
+}

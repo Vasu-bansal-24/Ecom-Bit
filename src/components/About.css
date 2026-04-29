@@ -1,0 +1,115 @@
+/* ========================================
+   ABOUT SECTION
+   ======================================== */
+.about {
+  padding: var(--section-padding);
+  position: relative;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-green-600), transparent);
+}
+
+.about__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.about__description {
+  max-width: 800px;
+  margin: 0 auto 64px;
+  padding: 0 24px;
+}
+
+.about__description p {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.about__lead {
+  font-size: 1.35rem !important;
+  color: var(--color-text-primary) !important;
+  font-weight: 500;
+  line-height: 1.6 !important;
+}
+
+.about__lead strong {
+  color: var(--color-green-400);
+}
+
+/* Mission Box */
+.about__mission {
+  max-width: 840px;
+  margin: 64px auto 0;
+  padding: 56px 48px;
+  background: linear-gradient(145deg, rgba(20, 20, 25, 0.8), rgba(10, 10, 15, 0.9));
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+.about__mission::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-green-400), var(--color-green-600));
+}
+
+.about__mission-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--color-green-400);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.about__mission-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.about__mission-text {
+  font-size: 1.25rem;
+  color: var(--color-green-100);
+  line-height: 1.8;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .about__mission {
+    padding: 40px 24px;
+  }
+  .about__lead {
+    font-size: 1.15rem !important;
+  }
+  .about__mission-text {
+    font-size: 1.1rem;
+  }
+}

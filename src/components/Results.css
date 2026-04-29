@@ -1,0 +1,300 @@
+/* ========================================
+   RESULTS SECTION
+   ======================================== */
+.results {
+  padding: var(--section-padding);
+  position: relative;
+  overflow: hidden;
+}
+
+.results::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-green-600), transparent);
+}
+
+.results__header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.results__title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.results__title-emoji {
+  color: var(--color-green-400);
+  font-size: 1em;
+}
+
+/* Results grid — 3 columns */
+.results__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+  margin-bottom: 64px;
+}
+
+.results__card {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.results__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  border-color: var(--color-green-500);
+}
+
+.results__card-screenshot {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-secondary);
+}
+
+.results__card-content {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.results__card-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-green-500);
+}
+
+.results__card-subtitle {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.results__card--large {
+  grid-column: 1 / -1;
+}
+
+.results__card--large .results__card-screenshot {
+  aspect-ratio: 21 / 9;
+}
+
+@media (max-width: 900px) {
+  .results__card--large .results__card-screenshot {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 600px) {
+  .results__card--large .results__card-screenshot {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Analytics showcase */
+.results__analytics {
+  max-width: 800px;
+  margin: 0 auto 64px;
+  padding: 0 24px;
+}
+
+.results__analytics-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  color: #1a1a1a;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.results__analytics-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  pointer-events: none;
+}
+
+.results__analytics-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.results__analytics-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.results__analytics-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.results__analytics-tag {
+  padding: 4px 12px;
+  background: #f5f5f5;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  color: #555;
+  border: 1px solid #e0e0e0;
+}
+
+.results__analytics-amount {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+  margin: 16px 0 24px;
+}
+
+/* Faux chart */
+.results__chart {
+  width: 100%;
+  height: 140px;
+  position: relative;
+  overflow: hidden;
+}
+
+.results__chart svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Side-scrollable testimonials carousel */
+.results__carousel-section {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+}
+
+.results__carousel-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 32px;
+  color: var(--color-text-primary);
+}
+
+.results__carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.results__carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding: 8px 0;
+}
+
+.results__carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.results__carousel-slide {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.results__carousel-slide:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-green-sm);
+}
+
+.results__carousel-slide img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+/* Arrow buttons */
+.results__carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border);
+  color: var(--color-green-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.results__carousel-arrow:hover {
+  background: var(--color-green-600);
+  border-color: var(--color-green-500);
+  color: #fff;
+  box-shadow: var(--shadow-green-sm);
+}
+
+.results__carousel-arrow--left {
+  left: -8px;
+}
+
+.results__carousel-arrow--right {
+  right: -8px;
+}
+
+@media (max-width: 900px) {
+  .results__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .results__grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+  .results__carousel-slide {
+    flex: 0 0 280px;
+  }
+  .results__carousel-slide img {
+    height: 400px;
+  }
+}
