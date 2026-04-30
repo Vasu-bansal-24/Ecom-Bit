@@ -47,10 +47,6 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <Link to="/onboarding" className="navbar__cta navbar__cta-desktop">
-          Get Started
-        </Link>
-
         <button
           className={`navbar__hamburger ${mobileOpen ? 'open' : ''}`}
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -68,9 +64,6 @@ export default function Navbar() {
             {link.label}
           </a>
         ))}
-        <Link to="/onboarding" className="navbar__cta" onClick={handleNavClick}>
-          Get Started
-        </Link>
       </div>
     </nav>
   );
