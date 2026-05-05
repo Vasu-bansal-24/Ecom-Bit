@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { CheckCircle } from 'lucide-react';
 import Results from './Results';
+import { trackPixelEvent } from '../hooks/useMetaPixel';
 import './OnboardingPage.css';
 
 export default function OnboardingPage() {
@@ -27,6 +28,11 @@ export default function OnboardingPage() {
       });
       const data = await response.json();
       if (data.success) {
+        // Fire Meta Pixel conversion event
+        trackPixelEvent('CompleteRegistration', {
+          content_name: 'Onboarding Application',
+          status: true,
+        });
         setIsSubmitted(true);
         // Optional: scroll to success message
         window.scrollTo(0, 0);

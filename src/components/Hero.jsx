@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Globe from './Globe';
+import { trackPixelEvent } from '../hooks/useMetaPixel';
 import './Hero.css';
 
 function AnimatedCounter({ target, suffix = '' }) {
@@ -73,7 +74,12 @@ export default function Hero() {
           </p>
 
           <div className="hero__cta-group">
-            <Link to="/onboarding" className="hero__cta-primary" id="hero-cta-demo">
+            <Link
+              to="/onboarding"
+              className="hero__cta-primary"
+              id="hero-cta-demo"
+              onClick={() => trackPixelEvent('Lead', { content_name: 'Book Free Demo' })}
+            >
               Book Free Demo <ArrowRight size={18} />
             </Link>
           </div>
